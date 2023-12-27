@@ -118,7 +118,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog p pegar nome cidade" sap:VirtualizedContainerService.HintSize="655.2,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Informe a cidade para consultar a previsão atualizada para amanhã " Title="Previsão do tempo amanhã">
+      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog p pegar nome cidades" sap:VirtualizedContainerService.HintSize="655.2,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Informe a cidade para consultar a previsão atualizada para amanhã " Title="Previsão do tempo amanhã">
         <ui:InputDialog.Result>
           <OutArgument x:TypeArguments="x:String">[nomeCidade]</OutArgument>
         </ui:InputDialog.Result>
@@ -197,10 +197,7 @@
         <Flowchart.StartNode>
           <x:Reference>__ReferenceID3</x:Reference>
         </Flowchart.StartNode>
-        <FlowDecision x:Name="__ReferenceID3" DisplayName="Grande chance de chuva?" sap:VirtualizedContainerService.HintSize="140.8,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
-          <FlowDecision.Condition>
-            <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="Convert.ToInt32(chanceChuvaInt) &gt; 50" />
-          </FlowDecision.Condition>
+        <FlowDecision x:Name="__ReferenceID3" Condition="[Convert.ToInt32(chanceChuvaInt) &gt; 50]" DisplayName="Grande chance de chuva?" sap:VirtualizedContainerService.HintSize="140.8,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
